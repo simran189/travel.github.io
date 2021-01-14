@@ -7,7 +7,7 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Travel &mdash; 100% Free Fully Responsive HTML5 Template by FREEHTML5.co</title>
+	<title>Canvas Club </title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
 	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
@@ -60,8 +60,155 @@
 	<link rel="stylesheet" href="css/cs-skin-border.css">
 	
 	<link rel="stylesheet" href="css/style.css">
+<style>
+.hello {
+  opacity: 1 !important;
+}
+.full {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.full .content {
+  background-color: rgba(0,0,0,0.75) !important;
+  height: 100%;
+  width: 100%;
+  display: grid;
+}
+.full .content img {
+  left: 50%;
+  transform: translate3d(0, 0, 0);
+  animation: zoomin 1s ease;
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto;
+}
+.byebye {
+  opacity: 0;
+}
+.byebye:hover {
+  transform: scale(0.2) !important;
+}
+.gallery {
+  display: grid;
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: 8px;
+}
+.gallery img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 0 16px #333;
+  transition: all 1.5s ease;
+}
+.gallery img:hover {
+  box-shadow: 0 0 32px #333;
+}
+.gallery .content {
+  padding: 4px;
+}
+.gallery .gallery-item {
+  transition: grid-row-start 300ms linear;
+  transition: transform 300ms ease;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+.gallery .gallery-item:hover {
+  transform: scale(1.025);
+}
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+  }
+}
+@media (max-width: 400px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+  }
+}
+@-moz-keyframes zoomin {
+  0% {
+    max-width: 50%;
+    transform: rotate(-30deg);
+    filter: blur(4px);
+  }
+  30% {
+    filter: blur(4px);
+    transform: rotate(-80deg);
+  }
+  70% {
+    max-width: 50%;
+    transform: rotate(45deg);
+  }
+  100% {
+    max-width: 100%;
+    transform: rotate(0deg);
+  }
+}
+@-webkit-keyframes zoomin {
+  0% {
+    max-width: 50%;
+    transform: rotate(-30deg);
+    filter: blur(4px);
+  }
+  30% {
+    filter: blur(4px);
+    transform: rotate(-80deg);
+  }
+  70% {
+    max-width: 50%;
+    transform: rotate(45deg);
+  }
+  100% {
+    max-width: 100%;
+    transform: rotate(0deg);
+  }
+}
+@-o-keyframes zoomin {
+  0% {
+    max-width: 50%;
+    transform: rotate(-30deg);
+    filter: blur(4px);
+  }
+  30% {
+    filter: blur(4px);
+    transform: rotate(-80deg);
+  }
+  70% {
+    max-width: 50%;
+    transform: rotate(45deg);
+  }
+  100% {
+    max-width: 100%;
+    transform: rotate(0deg);
+  }
+}
+@keyframes zoomin {
+  0% {
+    max-width: 50%;
+    transform: rotate(-30deg);
+    filter: blur(4px);
+  }
+  30% {
+    filter: blur(4px);
+    transform: rotate(-80deg);
+  }
+  70% {
+    max-width: 50%;
+    transform: rotate(45deg);
+  }
+  100% {
+    max-width: 100%;
+    transform: rotate(0deg);
+  }
+}
 
 
+</style>
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
 	<!-- FOR IE9 below -->
@@ -78,7 +225,7 @@
 			<div class="container">
 				<div class="nav-header">
 					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
-					<h1 id="fh5co-logo"><a href="index.html"><i class="icon-airplane"></i>Travel</a></h1>
+					<h1 id="fh5co-logo"><a href="index.html"><i class="icon-airplane"></i>Canvas Club</a></h1>
 					<!-- START #fh5co-menu-wrap -->
 					<nav id="fh5co-menu-wrap" role="navigation">
 						<ul class="sf-menu" id="fh5co-primary-menu">
@@ -108,7 +255,7 @@
 	
 		<div class="fh5co-hero">
 			<div class="fh5co-overlay"></div>
-			<div class="fh5co-cover" data-stellar-background-ratio="0.5" style="background-image: url(images/cover_bg_1.jpg);">
+			<div class="fh5co-cover" data-stellar-background-ratio="0.5" style="background-image: url(images/rkbanner.jpg);">
 				<div class="desc">
 					<div class="container">
 						<div class="row">
@@ -118,14 +265,9 @@
 								  <!-- Nav tabs -->
 								   <ul class="nav nav-tabs" role="tablist">
 								      <li role="presentation" class="active">
-								      	<a href="#flights" aria-controls="flights" role="tab" data-toggle="tab">Flights</a>
+								      	<a href="#flights" aria-controls="flights" role="tab" data-toggle="tab">Have a Question?</a>
 								      </li>
-								      <li role="presentation">
-								    	   <a href="#hotels" aria-controls="hotels" role="tab" data-toggle="tab">Hotels</a>
-								      </li>
-								      <li role="presentation">
-								    	   <a href="#packages" aria-controls="packages" role="tab" data-toggle="tab">Packages</a>
-								      </li>
+								    
 								   </ul>
 
 								   <!-- Tab panes -->
@@ -135,13 +277,13 @@
 											<div class="col-xxs-12 col-xs-6 mt">
 												<div class="input-field">
 													<label for="from">From:</label>
-													<input type="text" class="form-control" id="from-place" placeholder="Los Angeles, USA"/>
+													<input type="text" class="form-control" id="from-place" placeholder="Source"/>
 												</div>
 											</div>
 											<div class="col-xxs-12 col-xs-6 mt">
 												<div class="input-field">
 													<label for="from">To:</label>
-													<input type="text" class="form-control" id="to-place" placeholder="Tokyo, Japan"/>
+													<input type="text" class="form-control" id="to-place" placeholder="Destination"/>
 												</div>
 											</div>
 											<div class="col-xxs-12 col-xs-6 mt alternate">
@@ -152,188 +294,41 @@
 											</div>
 											<div class="col-xxs-12 col-xs-6 mt alternate">
 												<div class="input-field">
-													<label for="date-end">Check Out:</label>
-													<input type="text" class="form-control" id="date-end" placeholder="mm/dd/yyyy"/>
+													<label for="date-end">Email:</label>
+													<input type="text" class="form-control" id="from-place" placeholder="xyz@mail.com"/>
 												</div>
 											</div>
-											<div class="col-sm-12 mt">
-												<section>
-													<label for="class">Class:</label>
-													<select class="cs-select cs-skin-border">
-														<option value="" disabled selected>Economy</option>
-														<option value="economy">Economy</option>
-														<option value="first">First</option>
-														<option value="business">Business</option>
-													</select>
-												</section>
+											<div class="col-xxs-12 col-xs-6 mt alternate">
+												<div class="input-field">
+													<label for="date-start">Contact:</label>
+													<input type="text" class="form-control" id="from-place" placeholder="Your Number"/>
+												</div>
 											</div>
-											<div class="col-xxs-12 col-xs-6 mt">
-												<section>
-													<label for="class">Adult:</label>
-													<select class="cs-select cs-skin-border">
-														<option value="" disabled selected>1</option>
-														<option value="1">1</option>
-														<option value="2">2</option>
-														<option value="3">3</option>
-														<option value="4">4</option>
-													</select>
-												</section>
+											<div class="col-xxs-12 col-xs-6 mt alternate">
+												<div class="input-field">
+													<label for="date-end">Members:</label>
+													<input type="text" class="form-control" id="from-place" placeholder="No. Of Members"/>
+												</div>
 											</div>
-											<div class="col-xxs-12 col-xs-6 mt">
-												<section>
-													<label for="class">Children:</label>
-													<select class="cs-select cs-skin-border">
-														<option value="" disabled selected>1</option>
-														<option value="1">1</option>
-														<option value="2">2</option>
-														<option value="3">3</option>
-														<option value="4">4</option>
-													</select>
-												</section>
-											</div>
+											
+											
+											
 											<div class="col-xs-12">
-												<input type="submit" class="btn btn-primary btn-block" value="Search Flight">
+												<input type="submit" class="btn btn-primary btn-block" value="Enquire Now">
 											</div>
 										</div>
 									 </div>
 
-									 <div role="tabpanel" class="tab-pane" id="hotels">
-									 	<div class="row">
-											<div class="col-xxs-12 col-xs-12 mt">
-												<div class="input-field">
-													<label for="from">City:</label>
-													<input type="text" class="form-control" id="from-place" placeholder="Los Angeles, USA"/>
-												</div>
-											</div>
-											<div class="col-xxs-12 col-xs-6 mt alternate">
-												<div class="input-field">
-													<label for="date-start">Return:</label>
-													<input type="text" class="form-control" id="date-start" placeholder="mm/dd/yyyy"/>
-												</div>
-											</div>
-											<div class="col-xxs-12 col-xs-6 mt alternate">
-												<div class="input-field">
-													<label for="date-end">Check Out:</label>
-													<input type="text" class="form-control" id="date-end" placeholder="mm/dd/yyyy"/>
-												</div>
-											</div>
-											<div class="col-sm-12 mt">
-												<section>
-													<label for="class">Rooms:</label>
-													<select class="cs-select cs-skin-border">
-														<option value="" disabled selected>1</option>
-														<option value="economy">1</option>
-														<option value="first">2</option>
-														<option value="business">3</option>
-													</select>
-												</section>
-											</div>
-											<div class="col-xxs-12 col-xs-6 mt">
-												<section>
-													<label for="class">Adult:</label>
-													<select class="cs-select cs-skin-border">
-														<option value="" disabled selected>1</option>
-														<option value="1">1</option>
-														<option value="2">2</option>
-														<option value="3">3</option>
-														<option value="4">4</option>
-													</select>
-												</section>
-											</div>
-											<div class="col-xxs-12 col-xs-6 mt">
-												<section>
-													<label for="class">Children:</label>
-													<select class="cs-select cs-skin-border">
-														<option value="" disabled selected>1</option>
-														<option value="1">1</option>
-														<option value="2">2</option>
-														<option value="3">3</option>
-														<option value="4">4</option>
-													</select>
-												</section>
-											</div>
-											<div class="col-xs-12">
-												<input type="submit" class="btn btn-primary btn-block" value="Search Hotel">
-											</div>
-										</div>
-									 </div>
-
-									 <div role="tabpanel" class="tab-pane" id="packages">
-									 	<div class="row">
-											<div class="col-xxs-12 col-xs-6 mt">
-												<div class="input-field">
-													<label for="from">City:</label>
-													<input type="text" class="form-control" id="from-place" placeholder="Los Angeles, USA"/>
-												</div>
-											</div>
-											<div class="col-xxs-12 col-xs-6 mt">
-												<div class="input-field">
-													<label for="from">Destination:</label>
-													<input type="text" class="form-control" id="to-place" placeholder="Tokyo, Japan"/>
-												</div>
-											</div>
-											<div class="col-xxs-12 col-xs-6 mt alternate">
-												<div class="input-field">
-													<label for="date-start">Departs:</label>
-													<input type="text" class="form-control" id="date-start" placeholder="mm/dd/yyyy"/>
-												</div>
-											</div>
-											<div class="col-xxs-12 col-xs-6 mt alternate">
-												<div class="input-field">
-													<label for="date-end">Return:</label>
-													<input type="text" class="form-control" id="date-end" placeholder="mm/dd/yyyy"/>
-												</div>
-											</div>
-											<div class="col-sm-12 mt">
-												<section>
-													<label for="class">Rooms:</label>
-													<select class="cs-select cs-skin-border">
-														<option value="" disabled selected>1</option>
-														<option value="economy">1</option>
-														<option value="first">2</option>
-														<option value="business">3</option>
-													</select>
-												</section>
-											</div>
-											<div class="col-xxs-12 col-xs-6 mt">
-												<section>
-													<label for="class">Adult:</label>
-													<select class="cs-select cs-skin-border">
-														<option value="" disabled selected>1</option>
-														<option value="1">1</option>
-														<option value="2">2</option>
-														<option value="3">3</option>
-														<option value="4">4</option>
-													</select>
-												</section>
-											</div>
-											<div class="col-xxs-12 col-xs-6 mt">
-												<section>
-													<label for="class">Children:</label>
-													<select class="cs-select cs-skin-border">
-														<option value="" disabled selected>1</option>
-														<option value="1">1</option>
-														<option value="2">2</option>
-														<option value="3">3</option>
-														<option value="4">4</option>
-													</select>
-												</section>
-											</div>
-											<div class="col-xs-12">
-												<input type="submit" class="btn btn-primary btn-block" value="Search Packages">
-											</div>
-										</div>
-									 </div>
+									
 									</div>
 
 								</div>
 							</div>
 							<div class="desc2 animate-box">
 								<div class="col-sm-7 col-sm-push-1 col-md-7 col-md-push-1">
-									<p>HandCrafted by <a href="http://frehtml5.co/" target="_blank" class="fh5co-site-name">FreeHTML5.co</a></p>
-									<h2>Exclusive Limited Time Offer</h2>
-									<h3>Fly to Hong Kong via Los Angeles, USA</h3>
-									<span class="price">$599</span>
+									<h2>Exclusive Tourism Packages</h2>
+									<h3>Fly Your Self In The Depths Of Your Imagination</h3>
+									<span class="price">Explore Incredible India</span>
 									<!-- <p><a class="btn btn-primary btn-lg" href="#">Get Started</a></p> -->
 								</div>
 							</div>
@@ -348,8 +343,8 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-						<h3>Hot Tours</h3>
-						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+						<h3>Our Packages</h3>
+						<p>Welcome To Canvas Club We Offer All India Tourism Packages With Best Offers and Prices Contact Us To Know More</p>
 					</div>
 				</div>
 				<div class="row">
@@ -357,9 +352,9 @@
 						<div href="#"><img src="images/place-1.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
 							<div class="desc">
 								<span></span>
-								<h3>New York</h3>
+								<h3>Rishikesh</h3>
 								<span>3 nights + Flight 5*Hotel</span>
-								<span class="price">$1,000</span>
+								<span class="price">Rs 1,000</span>
 								<a class="btn btn-primary btn-outline" href="#">Book Now <i class="icon-arrow-right22"></i></a>
 							</div>
 						</div>
@@ -368,9 +363,9 @@
 						<div href="#"><img src="images/place-2.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
 							<div class="desc">
 								<span></span>
-								<h3>Philippines</h3>
+								<h3>Manali</h3>
 								<span>4 nights + Flight 5*Hotel</span>
-								<span class="price">$1,000</span>
+								<span class="price">Rs 1,000</span>
 								<a class="btn btn-primary btn-outline" href="#">Book Now <i class="icon-arrow-right22"></i></a>
 							</div>
 						</div>
@@ -379,9 +374,9 @@
 						<div href="#"><img src="images/place-3.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
 							<div class="desc">
 								<span></span>
-								<h3>Hongkong</h3>
+								<h3>Goa</h3>
 								<span>2 nights + Flight 4*Hotel</span>
-								<span class="price">$1,000</span>
+								<span class="price">Rs 1,000</span>
 								<a class="btn btn-primary btn-outline" href="#">Book Now <i class="icon-arrow-right22"></i></a>
 							</div>
 						</div>
@@ -636,48 +631,45 @@
 			</div>
 		</div>
 		<!-- fh5co-blog-section -->
-		<div id="fh5co-testimonial" style="background-image:url(images/img_bg_1.jpg);">
-		<div class="container">
-			<div class="row animate-box">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<h2>Happy Clients</h2>
-				</div>
+	
+
+		<h1 style="text-align: center;">Our Gallery</h1>
+
+		<div class="gallery" id="gallery">
+			<div class="gallery-item">
+				<div class="content"><img src="https://source.unsplash.com/random/?tech,studied" alt=""></div>
 			</div>
-			<div class="row">
-				<div class="col-md-4">
-					<div class="box-testimony animate-box">
-						<blockquote>
-							<span class="quote"><span><i class="icon-quotes-right"></i></span></span>
-							<p>&ldquo;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.&rdquo;</p>
-						</blockquote>
-						<p class="author">John Doe, CEO <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> <span class="subtext">Creative Director</span></p>
-					</div>
-					
-				</div>
-				<div class="col-md-4">
-					<div class="box-testimony animate-box">
-						<blockquote>
-							<span class="quote"><span><i class="icon-quotes-right"></i></span></span>
-							<p>&ldquo;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.&rdquo;</p>
-						</blockquote>
-						<p class="author">John Doe, CEO <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> <span class="subtext">Creative Director</span></p>
-					</div>
-					
-					
-				</div>
-				<div class="col-md-4">
-					<div class="box-testimony animate-box">
-						<blockquote>
-							<span class="quote"><span><i class="icon-quotes-right"></i></span></span>
-							<p>&ldquo;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.&rdquo;</p>
-						</blockquote>
-						<p class="author">John Doe, Founder <a href="#">FREEHTML5.co</a> <span class="subtext">Creative Director</span></p>
-					</div>
-					
-				</div>
+			<div class="gallery-item">
+				<div class="content"><img src="https://source.unsplash.com/random/?tech,studied" alt=""></div>
 			</div>
+			<div class="gallery-item">
+				<div class="content"><img src="https://source.unsplash.com/random/?tech,substance" alt=""></div>
+			</div>
+			<div class="gallery-item">
+				<div class="content"><img src="https://source.unsplash.com/random/?tech,studied" alt=""></div>
+			</div>
+			<div class="gallery-item">
+				<div class="content"><img src="https://source.unsplash.com/random/?tech,past" alt=""></div>
+			</div>
+			<div class="gallery-item">
+				<div class="content"><img src="https://source.unsplash.com/random/?tech,studied" alt=""></div>
+			</div>
+			<div class="gallery-item">
+				<div class="content"><img src="https://source.unsplash.com/random/?tech,studied" alt=""></div>
+			</div>
+			<div class="gallery-item">
+				<div class="content"><img src="https://source.unsplash.com/random/?tech,substance" alt=""></div>
+			</div>
+			<div class="gallery-item">
+				<div class="content"><img src="https://source.unsplash.com/random/?tech,studied" alt=""></div>
+			</div>
+			<div class="gallery-item">
+				<div class="content"><img src="https://source.unsplash.com/random/?tech,past" alt=""></div>
+			</div>
+			
 		</div>
-	</div>
+
+
 		<footer>
 			<div id="footer">
 				<div class="container">
@@ -758,7 +750,42 @@
 
 	<!-- jQuery -->
 
+<script>
+var gallery = document.querySelector('#gallery');
+var getVal = function (elem, style) { return parseInt(window.getComputedStyle(elem).getPropertyValue(style)); };
+var getHeight = function (item) { return item.querySelector('.content').getBoundingClientRect().height; };
+var resizeAll = function () {
+    var altura = getVal(gallery, 'grid-auto-rows');
+    var gap = getVal(gallery, 'grid-row-gap');
+    gallery.querySelectorAll('.gallery-item').forEach(function (item) {
+        var el = item;
+        el.style.gridRowEnd = "span " + Math.ceil((getHeight(item) + gap) / (altura + gap));
+    });
+};
+gallery.querySelectorAll('img').forEach(function (item) {
+    item.classList.add('byebye');
+    if (item.complete) {
+        console.log(item.src);
+    }
+    else {
+        item.addEventListener('load', function () {
+            var altura = getVal(gallery, 'grid-auto-rows');
+            var gap = getVal(gallery, 'grid-row-gap');
+            var gitem = item.parentElement.parentElement;
+            gitem.style.gridRowEnd = "span " + Math.ceil((getHeight(gitem) + gap) / (altura + gap));
+            item.classList.remove('byebye');
+        });
+    }
+});
+window.addEventListener('resize', resizeAll);
+gallery.querySelectorAll('.gallery-item').forEach(function (item) {
+    item.addEventListener('click', function () {        
+        item.classList.toggle('full');        
+    });
+});
 
+
+</script>
 	<script src="js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
 	<script src="js/jquery.easing.1.3.js"></script>
